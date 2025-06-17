@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getPostParams } from '../../../utils/postParams.ts'
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const posts = await getCollection('blog');
+    return posts.map(post => ({
+        params: getPostParams(post), props: { post },
+    }));
+}
+---
+
+<BaseLayout>
+	<p>Year page</p>
+</BaseLayout>
