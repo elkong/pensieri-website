@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { getPostParams } from '../../utils/postParams.ts';
 
 export async function getStaticPaths() {
     const allPosts = await getCollection("blog");
@@ -23,6 +24,15 @@ const { posts } = Astro.props;
 <BaseLayout>
     <p>Posts tagged with <span class="tag">{tag}</span></p>
     <ul>
-        {posts.map((post: any) => <li>{post.data.pubDate.toISOString().slice(0, 10)} <a href={`/posts/${post.id}/`}>{post.data.title}</a></li>)}
+        {posts.map((post: any) => {
+            const { path } = getPostParams(post);
+
+            return (
+            <li>
+                <span class="pubDate">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+                <a href={`/posts/${path}/`}>{post.data.title}</a>
+            </li>
+            )
+        })}
     </ul>
 </BaseLayout>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { getPostParams } from '../../utils/postParams.ts';
 
 const allPosts = await getCollection("blog");
 const pageTitle = "Blog";
@@ -10,10 +11,15 @@ const pageTitle = "Blog";
     <h2>Posts</h2>
     <p>This is a list of all posts on the site.</p>
     <ul>
-        <!-- <li><a href="/posts/post-1/">Post 1</a></li>
-        <li><a href="/posts/post-2/">Post 2</a></li>
-        <li><a href="/posts/post-3/">Post 3</a></li> -->
+        {allPosts.map((post: any) => {
+            const { path } = getPostParams(post);
 
-        {allPosts.map((post: any) => <li><span class="pubDate">{post.data.pubDate.toISOString().slice(0, 10)}</span> <a href={`/posts/${post.id}/`}>{post.data.title}</a></li>)}
+            return (
+            <li>
+                <span class="pubDate">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+                <a href={`/posts/${path}/`}>{post.data.title}</a>
+            </li>
+            )
+        })}
     </ul>
 </BaseLayout>
