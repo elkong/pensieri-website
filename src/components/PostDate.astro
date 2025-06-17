@@ -1,0 +1,5 @@
+---
+const { year, month, day } = Astro.props;
+---
+
+<span class="pubDate"><a href=`/posts/${year}`>{year}</a>-<a href=`/posts/${year}/${month}`>{month}</a>-<a href=`/posts/${year}/${month}/${day}`>{day}</a></span>

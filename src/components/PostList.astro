@@ -1,16 +1,17 @@
 ---
 import { getPostParams } from '../utils/postParams.ts';
+import PostDate from './PostDate.astro';
 
 const { posts } = Astro.props;
 ---
 
 <table class="postList">
     {posts.map((post: any) => {
-        const { path } = getPostParams(post);
+        const { year, month, day, path } = getPostParams(post);
 
         return (
         <tr>
-            <td><span class="pubDate">{post.data.pubDate.toISOString().slice(0, 10)}</span></td>
+            <td><PostDate year={year} month={month} day={day} /></td>
             <td><a href={`/posts/${path}/`}>{post.data.title}</a></td>
         </tr>
         )        

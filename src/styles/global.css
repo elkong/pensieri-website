@@ -24,50 +24,6 @@ h2 {
     text-align: center;
 }
 
-/* PostList */
-
-.postList td {
-    padding: 1px 5px;
-}
-
-/* tags */
-
-.tag-list p {
-    color: #6B7280; /* Slate Gray */
-    font-size: 0.9em;
-    text-align: center;    
-}
-
-.tags {
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.tag {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: .5em;
-    padding: .25em .5em;
-    font-size: 0.75em;
-    color: #6B7280; /* Slate Gray */
-    background-color: #F8FCFD;
-}
-
-.tag a:link {
-    text-decoration: none;
-    color: #6B7280; /* Slate Gray */
-}
-
-.tag a:visited {
-    color: #6B7280; /* Slate Gray */
-}
-
-.tag a:hover {
-    text-decoration: underline; /* Slate Gray */
-}
-
 /* nav-links */
 
 .nav-links {
@@ -156,12 +112,69 @@ h2 {
     margin: 5px 0;
 }
 
+/* PostList */
+
+.postList td {
+    padding: 1px 5px;
+}
+
 /* pubDate */
 
 .pubDate {
     font-size: 0.9em;
-    color: #6B7280; /* #a1a1a1 */ 
+    color: #6B7280; /* Slate Gray */ 
     text-align: center;
+}
+
+.pubDate a:link {
+    color: #6B7280;
+    text-decoration: none;
+}
+
+.pubDate a:visited {
+    color: #6B7280;
+}
+
+.pubDate a:hover {
+    text-decoration: underline;
+}
+
+/* tags */
+
+.tag-list p {
+    color: #6B7280; /* Slate Gray */
+    font-size: 0.9em;
+    text-align: center;    
+}
+
+.tags {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .25em .5em;
+    font-size: 0.75em;
+    color: #6B7280; /* Slate Gray */
+    background-color: #F8FCFD;
+}
+
+.tag a:link {
+    text-decoration: none;
+    color: #6B7280; /* Slate Gray */
+}
+
+.tag a:visited {
+    color: #6B7280; /* Slate Gray */
+}
+
+.tag a:hover {
+    text-decoration: underline; /* Slate Gray */
 }
 
 /* Markdown post formatting stuff */
