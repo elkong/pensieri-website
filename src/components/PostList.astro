@@ -4,15 +4,15 @@ import { getPostParams } from '../utils/postParams.ts';
 const { posts } = Astro.props;
 ---
 
-<ul>
+<table class="postList">
     {posts.map((post: any) => {
         const { path } = getPostParams(post);
 
         return (
-        <li>
-            <span class="pubDate">{post.data.pubDate.toISOString().slice(0, 10)}</span>
-            <a href={`/posts/${path}/`}>{post.data.title}</a>
-        </li>
-        )
+        <tr>
+            <td><span class="pubDate">{post.data.pubDate.toISOString().slice(0, 10)}</span></td>
+            <td><a href={`/posts/${path}/`}>{post.data.title}</a></td>
+        </tr>
+        )        
     })}
-</ul>
+</table>
