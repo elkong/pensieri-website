@@ -67,12 +67,40 @@ h2 {
     background-color: #F8FCFD;  
 }
 
-/* pubDate */
+/* prev-next-nav-links */
 
-.pubDate {
-    font-size: 0.9em;
-    color: #a1a1a1;
-    text-align: center;
+.prev-next-nav-links {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.prev-next-nav-links .prev-button {
+    margin: 0.25rem;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .25em .5em;
+    font-size: 0.75em;
+    background-color: #F8FCFD;  
+}
+
+.prev-next-nav-links .random-button {
+    margin: 0.25rem;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .25em .5em;
+    font-size: 0.75em;
+    background-color: #F8FCFD;  
+}
+
+.prev-next-nav-links .next-button {
+    margin: 0.25rem;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .25em .5em;
+    font-size: 0.75em;
+    background-color: #F8FCFD;  
 }
 
 /* postBody */
@@ -85,6 +113,14 @@ h2 {
 .postBody p {
     line-height: 1.5;
     margin: 5px 0;
+}
+
+/* pubDate */
+
+.pubDate {
+    font-size: 0.9em;
+    color: #a1a1a1;
+    text-align: center;
 }
 
 /* Markdown post formatting stuff */

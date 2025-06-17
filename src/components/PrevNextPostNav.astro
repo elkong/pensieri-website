@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { comparePostsByDate } from '../utils/comparePostsByDate';
+import { getPostParams } from '../utils/postParams';
+import { getRandomInt } from '../utils/getRandomInt';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort(
+    (a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => comparePostsByDate(a, b)
+);
+
+const { year, month, day, slug } = Astro.params;
+
+const currentPostIndex = sortedPosts.findIndex((post) => {
+    const postParams = getPostParams(post);
+    
+    return year == postParams.year && month == postParams.month && day == postParams.day && slug == postParams.slug;
+});
+
+/*
+    There's a little bit of trickery here.
+    Because it's a bit thorny to work with undefineds in JavaScript,
+    if there is no previous post (in the case of the very first post),
+    or no next post (in the case of the very last post),
+    let's just loop back around.
+*/
+const previousPost = currentPostIndex + 1 === posts.length ? posts[0] : posts[currentPostIndex + 1];
+const nextPost = currentPostIndex === 0 ? posts[posts.length - 1] : posts[currentPostIndex - 1];
+
+const randomPost = posts[getRandomInt(0, posts.length)];
+
+/*
+    And we'll have separate Boolean flags for if there are previous or next posts.
+*/
+const isTherePrevious = currentPostIndex + 1 !== posts.length;
+const isThereNext = currentPostIndex !== 0;
+
+const previousPostPath = getPostParams(previousPost).path;
+const previousPostTitle = previousPost.data.title;
+const nextPostPath = getPostParams(nextPost).path;
+const nextPostTitle = nextPost.data.title;
+
+const randomPostPath = getPostParams(randomPost).path;
+
+---
+
+{
+    (isTherePrevious || isThereNext) && (
+        <div class="prev-next-nav-links">
+            {
+                isTherePrevious && (
+                    <a class="prev-button" href={`/posts/${previousPostPath}/`}>&larr; {previousPostTitle}</a>
+                )
+            }
+            {
+                (<a class="random-button" href={`/posts/${randomPostPath}/`}>Random Post</a>)
+            }
+            {
+                isThereNext && (
+                    <a class="next-button" href={`/posts/${nextPostPath}/`}>{nextPostTitle} &rarr;</a>
+                )
+            }
+        </div>
+    )
+}
