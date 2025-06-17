@@ -29,6 +29,10 @@ h2 {
     text-align: center;
 }
 
+ul {
+    list-style-type: none;
+}
+
 /* tags */
 
 .tags {
@@ -63,4 +67,12 @@ h2 {
     padding: .25em .5em;
     font-size: 1em;
     background-color: #F8FCFD;  
+}
+
+/* pubDate */
+
+.pubDate {
+    font-size: 0.9em;
+    color: #a1a1a1;
+    text-align: center;
 }

@@ -14,6 +14,6 @@ const pageTitle = "Blog";
         <li><a href="/posts/post-2/">Post 2</a></li>
         <li><a href="/posts/post-3/">Post 3</a></li> -->
 
-        {allPosts.map((post: any) => <li>{post.data.pubDate.toISOString().slice(0, 10)} <a href={`/posts/${post.id}/`}>{post.data.title}</a></li>)}
+        {allPosts.map((post: any) => <li><span class="pubDate">{post.data.pubDate.toISOString().slice(0, 10)}</span> <a href={`/posts/${post.id}/`}>{post.data.title}</a></li>)}
     </ul>
 </BaseLayout>
