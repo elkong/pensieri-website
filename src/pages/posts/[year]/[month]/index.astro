@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { getPostParams } from '../../../utils/postParams.ts'
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { getPostParams } from '../../../../utils/postParams.ts'
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -10,10 +10,10 @@ export async function getStaticPaths() {
     }));
 }
 
-const { year } = Astro.params;
+const { year, month } = Astro.params;
 
 ---
 
 <BaseLayout>
-	<p>Year index page for {year}</p>
+	<p>Month index page for {year}/{month}</p>
 </BaseLayout>
