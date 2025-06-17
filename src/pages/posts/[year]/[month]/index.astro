@@ -2,7 +2,9 @@
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import PostList from '../../../../components/PostList.astro';
 import { getPostParams } from '../../../../utils/postParams.ts'
+import { comparePostsByDate } from '../../../../utils/comparePostsByDate';
 import { getCollection } from 'astro:content';
+import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
     const posts = await getCollection('blog');
@@ -20,10 +22,13 @@ const monthPosts = allPosts.filter(
         return year == postParams.year && month == postParams.month;
     }
 );
+const sortedPosts = monthPosts.sort(
+    (a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => comparePostsByDate(a, b)
+);
 
 ---
 
 <BaseLayout>
 	<h2>Monthly archive: {year}-{month}</h2>
-    <PostList posts={monthPosts} />
+    <PostList posts={sortedPosts} />
 </BaseLayout>

@@ -3,18 +3,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostList from '../../components/PostList.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { comparePostsByDate } from '../../utils/comparePostsByDate';
 
 const allPosts = await getCollection("blog");
 const sortedPosts = allPosts.sort(
-    (a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => {
-        const dateDifference = b.data.pubDate.getTime() - a.data.pubDate.getTime();
-
-        if (dateDifference != 0) {
-            return dateDifference;
-        } else {
-            return a.data.ordering - b.data.ordering;
-        }
-    }
+    (a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => comparePostsByDate(a, b)
 );
 const pageTitle = "Blog";
 ---

@@ -1,15 +1,12 @@
 /* @import 'https://fonts.googleapis.com/css?family=Spectral:200'; */
 
-* {
-    font-family: 'Spectral', sans-serif;
-    font-weight: 300;
-}
-
 html {
     background-color: #faf5ef;
 }
 
 body {
+    font-family: 'Spectral', sans-serif;
+    font-weight: 300;
     text-align: justify;
     margin: 0 auto;
     width: 100%;
@@ -90,7 +87,19 @@ h2 {
     margin: 5px 0;
 }
 
+/* Markdown post formatting stuff */
+
+/* commentary */
+
+.commentary {
+    font-family: 'Inter', sans-serif;
+    text-align: right;
+    color: #A0522D;
+    margin: 2rem 0 2rem 50px;
+}
+
 /* quote-attribution */
+
 .quote-attribution {
     text-align: right;
 }
@@ -100,3 +109,8 @@ h2 {
 .screenplay {
     font-family: 'Courier New', Courier, monospace;
 }
+
+.screenplay .center {
+    text-align: center;
+}
+
