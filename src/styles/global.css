@@ -89,3 +89,14 @@ h2 {
     line-height: 1.5;
     margin: 5px 0;
 }
+
+/* quote-attribution */
+.quote-attribution {
+    text-align: right;
+}
+
+/* screenplay */
+
+.screenplay {
+    font-family: 'Courier New', Courier, monospace;
+}
