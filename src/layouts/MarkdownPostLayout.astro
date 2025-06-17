@@ -15,10 +15,15 @@ const day = pubDate.slice(8, 10);
   <style>
     #postDate {
       text-align: center;
+      margin-bottom: 5px;
+    }
+    #postTitle {
+      margin-top: 5px;
+      margin-bottom: 40px;
     }
   </style>
   <p id="postDate"><PostDate year={year} month={month} day={day} /></p>
-  <h2>{frontmatter.title}</h2>
+  <h2 id="postTitle">{frontmatter.title}</h2>
   <div class="postBody">
     <slot />
   </div>
