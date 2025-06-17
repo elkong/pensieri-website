@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+import PostList from '../../../../../components/PostList.astro';
 import { getPostParams } from '../../../../../utils/postParams.ts'
 import { getCollection } from 'astro:content';
 
@@ -11,9 +12,18 @@ export async function getStaticPaths() {
 }
 
 const { year, month, day } = Astro.params;
+const allPosts = await getCollection("blog");
+const dayPosts = allPosts.filter(
+    (post: any) => {
+        const postParams = getPostParams(post);
+
+        return year == postParams.year && month == postParams.month && day == postParams.day;
+    }
+);
 
 ---
 
 <BaseLayout>
-	<p>Day index page for {year}/{month}/{day}</p>
+	<h2>Daily archive: {year}-{month}-{day}</h2>
+    <PostList posts={dayPosts} />
 </BaseLayout>

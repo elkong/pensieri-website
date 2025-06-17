@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostList from '../../../components/PostList.astro';
 import { getPostParams } from '../../../utils/postParams.ts'
 import { getCollection } from 'astro:content';
 
@@ -11,9 +12,18 @@ export async function getStaticPaths() {
 }
 
 const { year } = Astro.params;
+const allPosts = await getCollection("blog");
+const yearPosts = allPosts.filter(
+    (post: any) => {
+        const postParams = getPostParams(post);
+
+        return year == postParams.year;
+    }
+);
 
 ---
 
 <BaseLayout>
-	<p>Year index page for {year}</p>
+	<h2>Yearly archive: {year}</h2>
+    <PostList posts={yearPosts} />
 </BaseLayout>

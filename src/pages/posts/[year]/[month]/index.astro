@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import PostList from '../../../../components/PostList.astro';
 import { getPostParams } from '../../../../utils/postParams.ts'
 import { getCollection } from 'astro:content';
 
@@ -11,9 +12,18 @@ export async function getStaticPaths() {
 }
 
 const { year, month } = Astro.params;
+const allPosts = await getCollection("blog");
+const monthPosts = allPosts.filter(
+    (post: any) => {
+        const postParams = getPostParams(post);
+
+        return year == postParams.year && month == postParams.month;
+    }
+);
 
 ---
 
 <BaseLayout>
-	<p>Month index page for {year}/{month}</p>
+	<h2>Monthly archive: {year}-{month}</h2>
+    <PostList posts={monthPosts} />
 </BaseLayout>
