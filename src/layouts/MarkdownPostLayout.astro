@@ -1,0 +1,30 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+---
+<BaseLayout>
+  <h2>{frontmatter.title}</h2>
+  <p class="pubDate">Published on {frontmatter.pubDate.toISOString().slice(0, 10)}</p>
+  <div class="postBody">
+    <slot />
+  </div>
+
+  <div class="tags">{frontmatter.tags.map((tag: any) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}</div>
+
+  <style>
+    a {
+      color: #00539F;
+    }
+
+    .postBody {
+      text-indent: 2em;
+      text-align: justify;
+    }
+
+    .pubDate {
+      font-size: 0.9em;
+      color: #a1a1a1;
+      text-align: center;
+    }
+  </style>
+</BaseLayout>
