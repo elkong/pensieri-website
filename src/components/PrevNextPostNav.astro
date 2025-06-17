@@ -45,22 +45,30 @@ const randomPostPath = getPostParams(randomPost).path;
 
 ---
 
-{
-    (isTherePrevious || isThereNext) && (
-        <div class="prev-next-nav-links">
-            {
+<div class="prev-next-nav-links">
+    <p>MORE POSTS</p>
+    <table>
+        <tr>
+            <td>{
                 isTherePrevious && (
-                    <a class="prev-button" href={`/posts/${previousPostPath}/`}>&larr; {previousPostTitle}</a>
+                    <div class="nav-link">
+                        <a href={`/posts/${previousPostPath}/`}>&larr; {previousPostTitle}</a>
+                    </div>
                 )
-            }
-            {
-                (<a class="random-button" href={`/posts/${randomPostPath}/`}>Random Post</a>)
-            }
-            {
+            }</td>
+            <td>
+                <div class="nav-link">
+                    <a href={`/posts/${randomPostPath}/`}>Random Post</a>
+                </div>
+            </td>
+            <td>{
                 isThereNext && (
-                    <a class="next-button" href={`/posts/${nextPostPath}/`}>{nextPostTitle} &rarr;</a>
+                    <div class="nav-link">
+                        <a href={`/posts/${nextPostPath}/`}>{nextPostTitle} &rarr;</a>
+                    </div>
                 )
-            }
-        </div>
-    )
-}
+            }</td>
+        </tr>
+    </table>
+</div>
+

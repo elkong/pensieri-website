@@ -1,6 +1,8 @@
 ---
 import PrevNextPostNav from '../components/PrevNextPostNav.astro';
+import TagList from '../components/TagList.astro';
 import BaseLayout from './BaseLayout.astro';
+
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout>
@@ -10,8 +12,7 @@ const { frontmatter } = Astro.props;
     <slot />
   </div>
 
-  <div class="tags">{frontmatter.tags.map((tag: any) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}</div>
-
+  <TagList tags={frontmatter.tags} />
   <PrevNextPostNav />
 
   <style>
