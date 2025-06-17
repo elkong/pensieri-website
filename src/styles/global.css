@@ -5,6 +5,10 @@
     font-weight: 200;
 }
 
+html {
+    background-color: #faf5ef;
+}
+
 body {
     text-align: justify;
     margin: 0 auto;
