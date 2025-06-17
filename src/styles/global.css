@@ -2,7 +2,7 @@
 
 * {
     font-family: 'Spectral', sans-serif;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 html {
@@ -15,7 +15,6 @@ body {
     width: 100%;
     max-width: 80ch;
     padding: 1rem;
-    line-height: 1.5;
 }
 
 h1 {
@@ -75,4 +74,16 @@ ul {
     font-size: 0.9em;
     color: #a1a1a1;
     text-align: center;
+}
+
+/* postBody */
+
+.postBody {
+    text-indent: 2em;
+    text-align: justify;
+}
+
+.postBody p {
+    line-height: 1.5;
+    margin: 5px 0;
 }
