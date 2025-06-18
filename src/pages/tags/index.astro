@@ -5,6 +5,33 @@ import { getCollection } from "astro:content";
 const allPosts = await getCollection("blog");
 const tags = [...new Set(allPosts.map((post: any) => post.data.tags).flat().sort())];
 
+const tagCount = new Map();
+for (const post of allPosts) {
+    for (const tag of post.data.tags) {
+        if (tagCount.has(tag)) {
+            tagCount.set(tag, tagCount.get(tag) + 1);
+        } else {
+            tagCount.set(tag, 1);
+        }
+    }
+}
+
+/*
+    Custom comparator for tags.
+    We want to sort by frequency, and then alphabetically.
+*/
+function compareTags (a: string, b: string) {
+    const tagCountDifference = tagCount.get(b) - tagCount.get(a);
+
+    if (tagCountDifference !== 0) {
+        return tagCountDifference;
+    } else {
+        return a < b ? -1 : 1;
+    }
+}
+
+const sortedTags = tags.sort((a, b) => compareTags(a, b));
+
 const pageTitle = "Tag Index";
 ---
 
@@ -17,5 +44,5 @@ const pageTitle = "Tag Index";
 
     <h2>Tags</h2>
     <p>This is a list of all tags used on the site.</p>
-    <div class="tags">{tags.map((tag) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}</div>
+    <div class="tags">{sortedTags.map((tag) => <p class="tag"><a href={`/tags/${tag}`}>{tag} ({tagCount.get(tag)})</a></p>)}</div>
 </BaseLayout>
