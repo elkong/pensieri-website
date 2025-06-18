@@ -264,6 +264,7 @@ h2 {
     color: #ffffff;
     background-color: #007aff;
     text-indent: 0;
+    text-align: justify;
 }
 
 .received-message-wrapper {
@@ -283,9 +284,8 @@ h2 {
     color: black;
     background-color: #d3d3d3;
     text-indent: 0;
+    text-align: justify;
 }
-
-
 
 /* quote-attribution */
 
