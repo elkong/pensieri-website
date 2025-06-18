@@ -237,6 +237,56 @@ h2 {
     text-indent: 0;
 }
 
+/* text-message */
+
+.text-timestamp {
+    font-size: 0.8em;
+    color: #6B7280; /* Slate Gray */ 
+    text-indent: 0;
+    text-align: center;
+    justify-content: center;
+}
+
+.sent-message-wrapper {
+    text-align: right;
+    text-indent: 0;
+}
+
+.text-message-sent {
+    font-family: Inter, sans-serif;
+    margin: .1em;
+    display: inline-block;
+    flex-wrap: wrap;
+    border: solid 0px #a1a1a1;
+    border-radius: .5em;
+    padding: .4em .6em;
+    font-size: 0.85em;
+    color: #ffffff;
+    background-color: #007aff;
+    text-indent: 0;
+}
+
+.received-message-wrapper {
+    text-align: left;   
+    text-indent: 0;
+}
+
+.text-message-received {
+    font-family: Inter, sans-serif;
+    margin: .1em;
+    display: inline-block;
+    flex-wrap: wrap;
+    border: solid 0px #a1a1a1;
+    border-radius: .5em;
+    padding: .4em .6em;
+    font-size: 0.85em;
+    color: black;
+    background-color: #d3d3d3;
+    text-indent: 0;
+}
+
+
+
 /* quote-attribution */
 
 .quote-attribution {
