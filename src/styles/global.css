@@ -228,6 +228,15 @@ h2 {
     color: red;
 }
 
+/* email metadata */
+
+.email-metadata {
+    font-family: Courier, monospace;
+    font-size: 0.9em;
+    text-align: left;
+    text-indent: 0;
+}
+
 /* quote-attribution */
 
 .quote-attribution {
