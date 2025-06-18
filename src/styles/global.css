@@ -18,10 +18,16 @@ h1 {
     text-align: center;
     margin: 1rem 0;
     font-size: 3rem;
+    font-weight: 300;
 }
 
 h2 {
     text-align: center;
+    font-weight: 300;
+}
+
+strong {
+    font-weight: 600;
 }
 
 /* nav-links */
