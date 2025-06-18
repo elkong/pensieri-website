@@ -124,6 +124,10 @@ h2 {
     margin: 5px 0;
 }
 
+.postBody .small-caps {
+    font-variant: small-caps;
+}
+
 /* PostList */
 
 .postList td {
@@ -201,6 +205,17 @@ h2 {
     margin: 2rem 0 2rem 50px;
 }
 
+/* content-warning */
+
+.content-warning {
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    font-size: 0.8em;
+    margin: 2rem 50px 2rem 0;
+    text-indent: 0;
+    color: red;
+}
+
 /* quote-attribution */
 
 .quote-attribution {
@@ -222,6 +237,7 @@ h2 {
     border-style: solid;
     box-shadow: 2px 1px 1px gray;
 	padding: 5px 14px;
+    text-indent: 0;
 }
 
 .screenbox li {
