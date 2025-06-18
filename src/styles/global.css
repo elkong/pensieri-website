@@ -100,6 +100,10 @@ h2 {
     background-color: #F8FCFD;
 }
 
+.prev-next-nav-links .nav-link a {
+    color: #6B7280;
+}
+
 .prev-next-nav-links .nav-link a:link {
     text-decoration: none;
 }
@@ -142,6 +146,10 @@ h2 {
     text-align: center;
 }
 
+.pubDate a {
+    color: #6B7280; /* Slate Gray */
+}
+
 .pubDate a:link {
     color: #6B7280;
     text-decoration: none;
@@ -178,6 +186,10 @@ h2 {
     font-size: 0.75em;
     color: #6B7280; /* Slate Gray */
     background-color: #F8FCFD;
+}
+
+.tag a {
+    color: #6B7280; /* Slate Gray */
 }
 
 .tag a:link {
