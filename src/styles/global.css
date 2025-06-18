@@ -294,6 +294,32 @@ h2 {
 }
 
 /*
+    Plays
+*/
+
+.play-sceneheader {
+    font-variant: small-caps;
+    text-indent: 0;
+    text-align: center;
+}
+
+.play-character {
+    text-indent: 0;
+    text-align: center;
+}
+
+.play-dialogue,
+.play-setting {
+    text-align: justify;
+    text-indent: 0;
+}
+
+.play-action,
+.play-parenthetical {
+    font-style: italic;
+}
+
+/*
     Screenplays
 
     CSS from https://johnaugust.com/2004/screenbox
