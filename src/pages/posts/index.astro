@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostList from '../../components/PostList.astro';
+import RandomPost from '../../components/RandomPost.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { comparePostsByDate } from '../../utils/comparePostsByDate';
@@ -14,6 +15,9 @@ const pageTitle = "Blog";
 
 <BaseLayout pageTitle={pageTitle}>
     <h2>Posts</h2>
-    <p>This is a list of all posts on the site.</p>
+    <p>I highly encourage you to wander through my writings in a random, nonlinear fashion. Here's a button for that.</p>
+    <RandomPost />
+    <p>Otherwise, the foot traffic will disproportionately visit the latest few posts, and I think that would be a shame.</p>
+    <p>But for the completists, this is a list of all posts on the site.</p>
     <PostList posts={sortedPosts} />
 </BaseLayout>

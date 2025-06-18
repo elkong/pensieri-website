@@ -169,6 +169,37 @@ strong {
     text-decoration: underline;
 }
 
+/* random-post */
+
+.random-post {
+    text-align: center;
+}
+
+.random-post .nav-link {
+    margin: 0.25rem;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .25em .5em;
+    display: inline-block;
+    flex-wrap: wrap;
+    color: #6B7280; /* Slate Gray */
+    font-size: 0.9em;
+    text-align: center;
+    background-color: #F8FCFD;
+}
+
+.random-post .nav-link a:link {
+    text-decoration: none;
+}
+
+.random-post .nav-link a:visited {
+    color: #6B7280;
+}
+
+.random-post .nav-link a:hover {
+    text-decoration: underline;
+}
+
 /* tags */
 
 .tag-list p {
