@@ -58,19 +58,19 @@ const randomPostPath = getPostParams(randomPost).path;
         <tr>
             <td>{
                 isTherePrevious && (
-                    <div class="nav-link">
+                    <div class="nav-link blog-button">
                         <a href={`/posts/${previousPostPath}/`}>&larr; {previousPostTitle}</a>
                     </div>
                 )
             }</td>
             <td>
-                <div class="nav-link">
+                <div class="nav-link blog-button">
                     <a href={`/posts/${randomPostPath}/`}>Random Post</a>
                 </div>
             </td>
             <td>{
                 isThereNext && (
-                    <div class="nav-link">
+                    <div class="nav-link blog-button">
                         <a href={`/posts/${nextPostPath}/`}>{nextPostTitle} &rarr;</a>
                     </div>
                 )

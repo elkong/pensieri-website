@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import { getPostParams } from '../utils/postParams';
+
+const posts = await getCollection('blog');
+
+const years = [...new Set(posts.map((post: any) => getPostParams(post).year).flat())];
+
+const { year } = Astro.params;
+
+const currentYearIndex = years.findIndex((y: string) => y == year);
+
+/*
+    There's a little bit of trickery here.
+    Because it's a bit thorny to work with undefineds in JavaScript,
+    if there is no previous post (in the case of the very first post),
+    or no next post (in the case of the very last post),
+    let's just loop back around.
+*/
+const previousYear = currentYearIndex + 1 === years.length ? years[0] : years[currentYearIndex + 1];
+const nextYear = currentYearIndex === 0 ? years[years.length - 1] : years[currentYearIndex - 1];
+
+/*
+    And we'll have separate Boolean flags for if there are previous or next posts.
+*/
+const isTherePrevious = currentYearIndex + 1 !== years.length;
+const isThereNext = currentYearIndex !== 0;
+
+const previousYearPath = `${previousYear}`;
+const previousYearTitle = previousYear;
+const nextYearPath = `${nextYear}`;
+const nextYearTitle = nextYear;
+
+---
+
+<div class="prev-next-nav-links">
+    <table>
+        <tr>
+            <td>{
+                isTherePrevious && (
+                    <div class="nav-link blog-button">
+                        <a href={`/posts/${previousYearPath}/`}>&larr; {previousYearTitle}</a>
+                    </div>
+                )
+            }</td>
+            <td>
+                
+            </td>
+            <td>{
+                isThereNext && (
+                    <div class="nav-link blog-button">
+                        <a href={`/posts/${nextYearPath}/`}>{nextYearTitle} &rarr;</a>
+                    </div>
+                )
+            }</td>
+        </tr>
+    </table>
+</div>
+

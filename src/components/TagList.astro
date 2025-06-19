@@ -11,5 +11,5 @@ const { tags } = Astro.props;
         }
     </style>
     <p id="tags-text">TAGS</p>
-    <div class="tags">{tags.map((tag: any) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}</div>
+    <div class="tags">{tags.map((tag: any) => <p class="tag blog-button"><a href={`/tags/${tag}`}>{tag}</a></p>)}</div>
 </div>

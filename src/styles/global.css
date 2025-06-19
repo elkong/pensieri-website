@@ -30,6 +30,25 @@ strong {
     font-weight: 600;
 }
 
+/* blog button */
+
+.blog-button a {
+    color: #6B7280;
+}
+
+.blog-button a:link {
+    text-decoration: none;
+}
+
+.blog-button a:visited {
+    color: #6B7280;
+}
+
+.blog-button a:hover {
+    text-decoration: underline;
+}
+
+
 /* nav-links */
 
 .nav-links {
@@ -46,18 +65,6 @@ strong {
     padding: .25em .5em;
     font-size: 1em;
     background-color: #F8FCFD;  
-}
-
-.nav-links .nav-link:link {
-    text-decoration: none;
-}
-
-.nav-links .nav-link:visited {
-    color: #6B7280;
-}
-
-.nav-links .nav-link:hover {
-    text-decoration: underline;
 }
 
 /* prev-next-nav-links */
@@ -104,22 +111,6 @@ strong {
     font-size: 0.75em;
     text-align: center;
     background-color: #F8FCFD;
-}
-
-.prev-next-nav-links .nav-link a {
-    color: #6B7280;
-}
-
-.prev-next-nav-links .nav-link a:link {
-    text-decoration: none;
-}
-
-.prev-next-nav-links .nav-link a:visited {
-    color: #6B7280;
-}
-
-.prev-next-nav-links .nav-link a:hover {
-    text-decoration: underline;
 }
 
 /* postBody */
@@ -188,18 +179,6 @@ strong {
     background-color: #F8FCFD;
 }
 
-.random-post .nav-link a:link {
-    text-decoration: none;
-}
-
-.random-post .nav-link a:visited {
-    color: #6B7280;
-}
-
-.random-post .nav-link a:hover {
-    text-decoration: underline;
-}
-
 /* tags */
 
 .tag-list p {
@@ -223,23 +202,6 @@ strong {
     font-size: 0.75em;
     color: #6B7280; /* Slate Gray */
     background-color: #F8FCFD;
-}
-
-.tag a {
-    color: #6B7280; /* Slate Gray */
-}
-
-.tag a:link {
-    text-decoration: none;
-    color: #6B7280; /* Slate Gray */
-}
-
-.tag a:visited {
-    color: #6B7280; /* Slate Gray */
-}
-
-.tag a:hover {
-    text-decoration: underline; /* Slate Gray */
 }
 
 /* Markdown post formatting stuff */
