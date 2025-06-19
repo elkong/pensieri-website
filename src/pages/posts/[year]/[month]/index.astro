@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import PostList from '../../../../components/PostList.astro';
+import PrevNextDateNav from '../../../../components/PrevNextDateNav.astro';
 import { getPostParams } from '../../../../utils/postParams.ts'
 import { comparePostsByDate } from '../../../../utils/comparePostsByDate';
 import { getCollection } from 'astro:content';
@@ -31,4 +32,5 @@ const sortedPosts = monthPosts.sort(
 <BaseLayout>
 	<h2>Monthly archive: {year}-{month}</h2>
     <PostList posts={sortedPosts} />
+    <PrevNextDateNav />
 </BaseLayout>

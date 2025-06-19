@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import { getPostParams } from '../utils/postParams';
+
+const { year, month, day } = Astro.params;
+
+const posts = await getCollection('blog');
+
+const granularity = day !== undefined ? "day" : month !== undefined ? "month" : "year";
+
+function getDates() {
+    return [...new Set(posts.map((post: any) => {
+        const postParams = getPostParams(post);
+        if (granularity == "year") {
+            return postParams.year;
+        } else if (granularity == "month") {
+            return `${postParams.year}-${postParams.month}`;
+        } else {
+            return `${postParams.year}-${postParams.month}-${postParams.day}`;
+        }
+    }).flat())];
+}
+
+const dates = getDates().sort().reverse();
+
+const currentDateIndex = dates.findIndex((s: string) => {
+    if (granularity == "year") {
+        return s == year;
+    } else if (granularity == "month") {
+        return s == `${year}-${month}`;
+    } else {
+        return s == `${year}-${month}-${day}`;
+    }
+});
+
+/*
+    There's a little bit of trickery here.
+    Because it's a bit thorny to work with undefineds in JavaScript,
+    if there is no previous post (in the case of the very first post),
+    or no next post (in the case of the very last post),
+    let's just loop back around.
+*/
+const previousDate = currentDateIndex + 1 === dates.length ? dates[0] : dates[currentDateIndex + 1];
+const nextDate = currentDateIndex === 0 ? dates[dates.length - 1] : dates[currentDateIndex - 1];
+
+/*
+    And we'll have separate Boolean flags for if there are previous or next posts.
+*/
+const isTherePrevious = currentDateIndex + 1 !== dates.length;
+const isThereNext = currentDateIndex !== 0;
+
+const previousDatePath = previousDate.replaceAll('-', '/');
+const previousDateTitle = previousDate;
+const nextDatePath = nextDate.replaceAll('-', '/');
+const nextDateTitle = nextDate;
+
+---
+
+<div class="prev-next-nav-links">
+    <table>
+        <tr>
+            <td>{
+                isTherePrevious && (
+                    <div class="nav-link blog-button">
+                        <a href={`/posts/${previousDatePath}/`}>&larr; {previousDateTitle}</a>
+                    </div>
+                )
+            }</td>
+            <td>
+                
+            </td>
+            <td>{
+                isThereNext && (
+                    <div class="nav-link blog-button">
+                        <a href={`/posts/${nextDatePath}/`}>{nextDateTitle} &rarr;</a>
+                    </div>
+                )
+            }</td>
+        </tr>
+    </table>
+</div>
+
