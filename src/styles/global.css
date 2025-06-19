@@ -179,7 +179,7 @@ strong {
     margin: 0.25rem;
     border: dotted 1px #a1a1a1;
     border-radius: .5em;
-    padding: .25em .5em;
+    padding: .5em .75em;
     display: inline-block;
     flex-wrap: wrap;
     color: #6B7280; /* Slate Gray */
