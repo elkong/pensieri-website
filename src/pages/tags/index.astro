@@ -38,11 +38,25 @@ const pageTitle = "Tag Index";
 <BaseLayout pageTitle={pageTitle}>
     <style>
         a {
-          color: #00539F;
+            color: #00539F;
+        }
+        .big-tag {
+            font-size: 1rem;
+        }
+        .small-tag {
+            font-size: 0.75rem;
         }
     </style>
 
     <h2>Tags</h2>
     <p>This is a list of all tags used on the site.</p>
-    <div class="tags">{sortedTags.map((tag) => <p class="tag"><a href={`/tags/${tag}`}>{tag} ({tagCount.get(tag)})</a></p>)}</div>
+    <div class="tags">
+    {
+        sortedTags.map((tag) => {
+            const freq = tagCount.get(tag);
+            const classStr = "tag blog-button" + ((freq > 1) ? " big-tag" : " small-tag");
+            return <p class={classStr}><a href={`/tags/${tag}`}>{tag} ({freq})</a></p>
+        })
+    }
+    </div>
 </BaseLayout>

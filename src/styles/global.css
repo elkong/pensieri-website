@@ -37,6 +37,7 @@ strong {
 }
 
 .blog-button a:link {
+    color: #6B7280;
     text-decoration: none;
 }
 
@@ -45,6 +46,7 @@ strong {
 }
 
 .blog-button a:hover {
+    color: #6B7280;
     text-decoration: underline;
 }
 

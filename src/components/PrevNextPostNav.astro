@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { comparePostsByDate } from '../utils/comparePostsByDate';
 import { getPostParams } from '../utils/postParams';
-import { getRandomInt } from '../utils/getRandomInt';
+import { getRandomIntExcludingCurrent } from '../utils/getRandomInt';
 
 const posts = await getCollection('blog');
 const sortedPosts = posts.sort(
@@ -28,7 +28,7 @@ const currentPostIndex = sortedPosts.findIndex((post) => {
 const previousPost = currentPostIndex + 1 === posts.length ? posts[0] : posts[currentPostIndex + 1];
 const nextPost = currentPostIndex === 0 ? posts[posts.length - 1] : posts[currentPostIndex - 1];
 
-const randomPost = posts[getRandomInt(0, posts.length)];
+const randomPost = posts[getRandomIntExcludingCurrent(0, posts.length, currentPostIndex)];
 
 /*
     And we'll have separate Boolean flags for if there are previous or next posts.
