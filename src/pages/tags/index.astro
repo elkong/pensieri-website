@@ -46,7 +46,7 @@ function getTagSize (frequency: number) {
     // } else {
     //     return 0.7;
     // }
-    return 0.7 + Math.floor((0.4 * Math.log10(frequency)) * 100) / 100;
+    return 0.7 + Math.floor((0.5 * Math.log10(frequency)) * 100) / 100;
 }
 
 // const sortedTags = tags.sort((a, b) => compareTags(a, b));
@@ -63,7 +63,9 @@ const pageTitle = "Tag Index";
     </style>
 
     <h2>Tags</h2>
-    <p>This is a list of all tags used on the site.</p>
+    <div class="postBody">
+        <p>This is a list of all tags used on the site.</p>
+    </div>
     <div class="tags">
     {
         sortedTags.map((tag) => {
