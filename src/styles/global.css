@@ -167,6 +167,10 @@ strong {
     font-variant: small-caps;
 }
 
+.postBody .ipa {
+    font-family: Courier, monospace;
+}
+
 /* PostList */
 
 .postList td {
