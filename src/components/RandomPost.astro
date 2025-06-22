@@ -1,19 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
-import { getPostParams } from '../utils/postParams';
-import { getRandomInt } from '../utils/getRandomInt';
-
-const posts = await getCollection('blog');
-
-const randomPost = posts[getRandomInt(0, posts.length)];
-
-const randomPostPath = getPostParams(randomPost).path;
-
 ---
 
 <div class="random-post">
     <div class="nav-link blog-button">
-        <a href={`/posts/${randomPostPath}/`}>Random Post</a>
+        <a href={`/posts/random/`}>Random Post</a>
     </div>
 </div>
-

@@ -1,0 +1,17 @@
+---
+---
+
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Redirecting...</title>
+	</head>
+	<body>
+		<p>Redirecting to a random page...</p>
+		<script type="module">
+			fetch('/api/random')
+				.then(res => res.json())
+				.then(({ url }) => window.location.href = url);
+		</script>
+	</body>
+</html>
