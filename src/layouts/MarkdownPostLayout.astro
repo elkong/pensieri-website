@@ -21,6 +21,13 @@ const day = pubDate.slice(8, 10);
       margin-top: 5px;
       margin-bottom: 40px;
     }
+    #tags-text, #more-posts-text {
+      color: #6B7280; /* Slate Gray */
+      font-size: 0.9em;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
   </style>
   <p id="postDate"><PostDate year={year} month={month} day={day} /></p>
   <h2 id="postTitle">{frontmatter.title}</h2>
@@ -29,12 +36,10 @@ const day = pubDate.slice(8, 10);
   </div>
 
   <br />
-  <TagList tags={frontmatter.tags} />
-  <PrevNextPostNav />
 
-  <style>
-    a {
-      color: #00539F;
-    }
-  </style>
+  <p id="tags-text">TAGS</p>
+  <TagList tags={frontmatter.tags} />
+
+  <p id="more-posts-text">MORE POSTS</p>
+  <PrevNextPostNav />
 </BaseLayout>
