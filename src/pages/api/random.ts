@@ -1,3 +1,5 @@
+export const prerender = false;
+
 import { getCollection } from 'astro:content';
 import { getPostParams } from '../../utils/postParams';
 import { getRandomInt } from '../../utils/getRandomInt.ts';
@@ -12,9 +14,15 @@ export async function GET() {
     const randomUrl = urls[getRandomInt(0, urls.length)];
 
     return new Response(
-        JSON.stringify({ url: randomUrl }),
+        JSON.stringify({ 
+            url: randomUrl,
+            timestamp: new Date().toISOString(),
+        }),
         {
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 
+                'Content-Type': 'application/json',
+                'Cache-Control': 'no-store',
+            }
         }
     );
 }

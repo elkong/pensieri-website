@@ -1,0 +1,14 @@
+{
+    "headers": [
+      {
+        "source": "/api/random",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-store"
+          }
+        ]
+      }
+    ]
+  }
+  
