@@ -56,16 +56,11 @@ const pageTitle = "Tag Index";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <style>
-        a {
-            color: #00539F;
-        }
-    </style>
-
     <h2>Tags</h2>
     <div class="postBody">
         <p>This is a list of all tags used on the site.</p>
     </div>
+    <br />
     <div class="tags">
     {
         sortedTags.map((tag) => {

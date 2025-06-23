@@ -36,6 +36,22 @@ strong {
     font-weight: 600;
 }
 
+a {
+    color: #3A5FCD; /* Oxford Blue */
+}
+
+a:visited {
+    color: #7E5A9B; /* Dusty Lavender */
+}
+
+html.dark a {
+    color: #A6C4FF; /* Dusky Cornflower */
+}
+
+html.dark a:visited {
+    color: #C5A3E0; /* Faded Lilac */
+}
+
 /* blog button */
 
 .blog-button a {
@@ -44,20 +60,26 @@ strong {
 }
 
 .blog-button a:link {
-    color: #6B7280;
-    background-color: #F8FCFD;  
+    /* color: #6B7280;
+    background-color: #F8FCFD;   */
     text-decoration: none;
 }
 
 .blog-button a:visited {
-    color: #6B7280;
-    background-color: #F8FCFD;  
+    /* color: #6B7280;
+    background-color: #F8FCFD;   */
+    text-decoration: none;
 }
 
 .blog-button a:hover {
-    color: #6B7280;
-    background-color: #F8FCFD;  
+    /* color: #6B7280;
+    background-color: #F8FCFD;   */
     text-decoration: underline;
+}
+
+html.dark .blog-button a {
+    color: #D6D3D1; /* Pearl Stone */
+    background-color: #3F3B36; /* Ashen Stone */
 }
 
 /* dark-mode */
@@ -85,6 +107,12 @@ strong {
     background-color: #F8FCFD;
 }
 
+html.dark #dark-mode-button {
+    color: #D6D3D1; /* Pearl Stone */
+    background-color: #3F3B36; /* Ashen Stone */
+}
+
+
 /* nav-links */
 
 .nav-links {
@@ -100,6 +128,11 @@ strong {
     border-radius: .5em;
     padding: .25em .5em;
     font-size: 1em;
+}
+
+html.dark .nav-links .nav-link {
+    color: #D6D3D1; /* Pearl Stone */
+    background-color: #3F3B36; /* Ashen Stone */
 }
 
 /* prev-next-nav-links */
@@ -151,6 +184,11 @@ strong {
     background-color: #F8FCFD;
 }
 
+html.dark .prev-next-nav-links .nav-link {
+    color: #D6D3D1; /* Pearl Stone */
+    background-color: #3F3B36; /* Ashen Stone */
+}
+
 /* prev-next-date-links */
 
 .prev-next-date-links table {
@@ -182,6 +220,11 @@ strong {
     font-size: 0.9em;
     text-align: center;
     background-color: #F8FCFD;
+}
+
+html.dark .prev-next-date-links .nav-link {
+    color: #D6D3D1; /* Pearl Stone */
+    background-color: #3F3B36; /* Ashen Stone */
 }
 
 /* postBody */
@@ -236,6 +279,10 @@ strong {
     text-decoration: underline;
 }
 
+html.dark .pubDate a {
+    color: #9CA3AF; /* Cool Silver */
+}
+
 /* random-post */
 
 .random-post {
@@ -254,6 +301,11 @@ strong {
     font-size: 0.9em;
     text-align: center;
     background-color: #F8FCFD;
+}
+
+html.dark .random-post .nav-link {
+    color: #D6D3D1; /* Pearl Stone */
+    background-color: #3F3B36; /* Ashen Stone */
 }
 
 /* tags */
@@ -284,6 +336,11 @@ strong {
     vertical-align: middle;
 }
 
+html.dark .tag {
+    color: #D6D3D1; /* Pearl Stone */
+    background-color: #3F3B36; /* Ashen Stone */
+}
+
 /* Markdown post formatting stuff */
 
 /* commentary */
@@ -296,6 +353,10 @@ strong {
     margin: 2rem 0 2rem 50px;
 }
 
+html.dark .commentary {
+    color: #D4A373; /* Tawny Sand */
+}
+
 /* content-warning */
 
 .content-warning {
@@ -304,7 +365,11 @@ strong {
     font-size: 0.8em;
     margin: 2rem 50px 2rem 0;
     text-indent: 0;
-    color: red;
+    color: #D72638; /* Crimson Fire */
+}
+
+html.dark .content-warning {
+    color: #FFABA8; /* Blush Rose */
 }
 
 /* email metadata */
@@ -373,6 +438,29 @@ strong {
 }
 
 /*
+    MarkdownPostLayout Elements and Colours
+*/
+
+#postDate {
+    text-align: center;
+    margin-bottom: 5px;
+}
+#postTitle {
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+#tags-text, #more-posts-text {
+    color: #6B7280; /* Slate Gray */
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+html.dark #tags-text, html.dark #more-posts-text {
+    color: #9CA3AF; /* Cool Silver */
+}
+
+/*
     Plays
 */
 
@@ -414,6 +502,14 @@ strong {
     box-shadow: 2px 1px 1px gray;
 	padding: 5px 14px;
     text-indent: 0;
+}
+
+html.dark .screenbox {
+    background: #080808;
+    color: #ffffff;
+    border: 1px solid #bbb;
+    border-style: solid;
+    box-shadow: 2px 1px 1px gray;
 }
 
 .screenbox li {

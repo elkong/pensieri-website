@@ -16,6 +16,16 @@
             </td>
         </tr>
     </table>
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'light') {
+                document.getElementById("dark-mode-button-anchor")!.innerText = "Off";
+            } else {
+                document.getElementById("dark-mode-button-anchor")!.innerText = "On";
+            }
+        })();
+    </script>
 </div>
 
 <script is:inline>
