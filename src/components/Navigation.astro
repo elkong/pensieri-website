@@ -1,9 +1,16 @@
 ---
+import SiteIcon from './SiteIcon.astro';
+import ThemeToggle from "./ThemeToggle.astro";
 ---
+
 <div class="nav-links blog-button">
+    <div class="nav-site-icon"><SiteIcon /></div>
     <a class="nav-link" href="/">Home</a>
     <a class="nav-link" href="/about/">About</a>
     <a class="nav-link" href="/posts/">Posts</a>
     <a class="nav-link" href="/tags/">Tags</a>
-    <a class="nav-link" href="/settings/">Settings</a>
+    <div class="nav-theme-toggle-button"><ThemeToggle /></div>
 </div>
+
+
+

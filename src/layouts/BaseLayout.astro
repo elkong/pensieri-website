@@ -9,7 +9,16 @@ import Footer from '../components/Footer.astro';
 		<!-- Script to change theme to dark mode if needed. -->
 		<script is:inline>
 			(function() {
-			  	const theme = localStorage.getItem('theme');
+				const theme = (() => {
+					const localStorageTheme = localStorage?.getItem("theme") ?? '';
+						if (['dark', 'light'].includes(localStorageTheme)) {
+							return localStorageTheme;
+						}
+						if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+							return 'dark';
+						}
+						return 'light';
+				})();
 			  	if (theme === 'light') {
 					document.documentElement.classList.remove('dark');
 					
@@ -19,7 +28,7 @@ import Footer from '../components/Footer.astro';
 			})();
 		</script>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/kc-icon-1.svg" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral:300,300italic,600,600italic">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300italic">
 		<meta name="viewport" content="width=device-width" />
@@ -30,6 +39,7 @@ import Footer from '../components/Footer.astro';
 	<body>
 		<Header />
 		<slot />
+		<br />
 		<Footer />
 	</body>
 </html>

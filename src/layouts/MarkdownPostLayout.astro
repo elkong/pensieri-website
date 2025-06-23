@@ -12,27 +12,7 @@ const month = pubDate.slice(5, 7);
 const day = pubDate.slice(8, 10);
 ---
 <BaseLayout>
-  <style>
-    #postDate {
-      text-align: center;
-      margin-bottom: 5px;
-    }
-    #postTitle {
-      margin-top: 5px;
-      margin-bottom: 40px;
-    }
-    #tags-text, #more-posts-text {
-      color: #6B7280; /* Slate Gray */
-      font-size: 0.9em;
-      text-align: center;
-      margin-top: 20px;
-      margin-bottom: 5px;
-    }
-    html.dark #tags-text, html.dark #more-posts-text {
-      color: #9CA3AF; /* Cool Silver */
-    }
-  </style>
-  <PrevNextPostNav />
+  <!-- <PrevNextPostNav /> -->
   <p id="postDate"><PostDate year={year} month={month} day={day} /></p>
   <h2 id="postTitle">{frontmatter.title}</h2>
   <div class="postBody">
