@@ -13,6 +13,18 @@ import Footer from '../components/Footer.astro';
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Kitten Carnival</title>
+		<!-- Script to change theme to dark mode if needed. -->
+		<script>
+			(function() {
+			  	const theme = localStorage.getItem('theme');
+			  	if (theme === 'light') {
+					document.documentElement.classList.remove('dark');
+					
+				} else {
+					document.documentElement.classList.add('dark');
+				}
+			})();
+		  </script>
 	</head>
 	<body>
 		<Header />

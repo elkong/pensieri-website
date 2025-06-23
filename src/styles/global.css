@@ -1,7 +1,13 @@
 /* @import 'https://fonts.googleapis.com/css?family=Spectral:200'; */
 
 html {
-    background-color: #faf5ef;
+    background-color: #faf5ef; /* Linen */
+    color: #2c2c28; /* Graphite */
+}
+
+html.dark {
+    background-color: #1e1b16; /* Warm Charcoal */
+    color: #eae4d8; /* Antique Paper */
 }
 
 body {
@@ -34,22 +40,50 @@ strong {
 
 .blog-button a {
     color: #6B7280;
+    background-color: #F8FCFD;  
 }
 
 .blog-button a:link {
     color: #6B7280;
+    background-color: #F8FCFD;  
     text-decoration: none;
 }
 
 .blog-button a:visited {
     color: #6B7280;
+    background-color: #F8FCFD;  
 }
 
 .blog-button a:hover {
     color: #6B7280;
+    background-color: #F8FCFD;  
     text-decoration: underline;
 }
 
+/* dark-mode */
+
+.dark-mode table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;  
+}
+
+.dark-mode table td {
+    width: 50%;
+    text-align: center;
+} 
+
+#dark-mode-button {
+    display: inline-block;
+    margin: 0.25rem;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .5em .75em;
+    color: #6B7280; /* Slate Gray */
+    font-size: 0.9em;
+    text-align: center;
+    background-color: #F8FCFD;
+}
 
 /* nav-links */
 
@@ -66,7 +100,6 @@ strong {
     border-radius: .5em;
     padding: .25em .5em;
     font-size: 1em;
-    background-color: #F8FCFD;  
 }
 
 /* prev-next-nav-links */
@@ -176,6 +209,7 @@ strong {
 .postList td {
     padding: 1px 5px;
 }
+
 
 /* pubDate */
 
