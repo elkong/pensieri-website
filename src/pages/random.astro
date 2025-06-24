@@ -49,7 +49,7 @@
 		<script type="module">
 			fetch('/api/random')
 				.then(res => res.json())
-				.then(({ url }) => window.location.href = url);
+				.then(({ url }) => window.location.replace(url));
 		</script>
 	</body>
 </html>
