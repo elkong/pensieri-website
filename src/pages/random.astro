@@ -19,29 +19,28 @@
 			background-color: #1e1b16; /* Warm Charcoal */
 		}
 	</style>
-		<script is:inline>
-			(function() {
-				const theme = (() => {
-					const localStorageTheme = localStorage?.getItem("theme") ?? '';
-						if (['dark', 'light'].includes(localStorageTheme)) {
-							return localStorageTheme;
-						}
-						if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-							return 'dark';
-						}
-						return 'light';
-				})();
-				if (theme === 'light') {
-					document.documentElement.classList.remove('dark');
-				} else {
-					document.documentElement.classList.add('dark');
-				}
+	<script is:inline>
+		// This sets the background colour according to the theme so we avoid a FOUC
+		// (Flash Of Unstyled Content)
+		(function() {
+			const theme = (() => {
+				const localStorageTheme = localStorage?.getItem("theme") ?? '';
+					if (['dark', 'light'].includes(localStorageTheme)) {
+						return localStorageTheme;
+					}
+					if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+						return 'dark';
+					}
+					return 'light';
 			})();
-		</script>
+			if (theme === 'light') {
+				document.documentElement.classList.remove('dark');
+			} else {
+				document.documentElement.classList.add('dark');
+			}
+		})();
+	</script>
 	<head>
-		<script>
-
-		</script>
 		<meta charset="UTF-8" />
 		<title>Redirecting...</title>
 	</head>

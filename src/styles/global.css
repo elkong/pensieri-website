@@ -32,6 +32,10 @@ h2 {
     font-weight: 300;
 }
 
+h3 {
+    text-align: center;
+}
+
 strong {
     font-weight: 600;
 }
@@ -208,11 +212,11 @@ html.dark .prev-next-date-links .nav-link {
 /* postBody */
 
 .postBody {
-    text-indent: 2em;
     text-align: justify;
 }
 
 .postBody p {
+    text-indent: 2em;
     line-height: 1.5;
     margin: 5px 0;
 }
