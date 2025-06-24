@@ -231,7 +231,6 @@ html.dark .prev-next-date-links .nav-link {
     padding: 1px 5px;
 }
 
-
 /* pubDate */
 
 .pubDate {
@@ -423,10 +422,12 @@ html.dark .content-warning {
     text-align: center;
     margin-bottom: 5px;
 }
+
 #postTitle {
     margin-top: 5px;
     margin-bottom: 40px;
 }
+
 #tags-text, #more-posts-text {
     color: #6B7280; /* Slate Gray */
     font-size: 0.9em;
@@ -434,8 +435,17 @@ html.dark .content-warning {
     margin-top: 20px;
     margin-bottom: 5px;
 }
+
 html.dark #tags-text, html.dark #more-posts-text {
     color: #9CA3AF; /* Cool Silver */
+}
+
+.section-header {
+    color: #6B7280; /* Slate Gray */
+    font-size: 1em;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;   
 }
 
 /*
