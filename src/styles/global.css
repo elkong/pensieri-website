@@ -475,6 +475,7 @@ html.dark #tags-text, html.dark #more-posts-text {
 
 .play-action,
 .play-parenthetical {
+    text-indent: 2em;
     font-style: italic;
 }
 
