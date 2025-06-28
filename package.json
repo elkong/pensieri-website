@@ -4,13 +4,15 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "generate:urls": "tsx scripts/generate-post-urls.ts",
+    "build": "npm run generate:urls && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/vercel": "^8.2.0",
-    "astro": "^5.9.3"
+    "astro": "^5.9.3",
+    "gray-matter": "^4.0.3"
   },
   "devDependencies": {
     "typescript": "^5.8.3"

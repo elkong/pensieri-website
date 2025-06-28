@@ -1,30 +1,11 @@
 export const prerender = false;
 
-import { getCollection } from 'astro:content';
-import { getPostParams } from '../../utils/postParams.ts';
+import postUrls from '../../data/post-urls.json';
 import { getRandomInt } from '../../utils/getRandomInt.ts';
 
-// let cachedUrls: string[] | undefined;
+export function GET() {
 
-export async function GET() {
-
-    // if (!cachedUrls) {
-    //     const posts = await getCollection('blog');
-
-    //     const urls = posts.map(
-    //         post => `/posts/${getPostParams(post).path}`
-    //     )
-    // }
-
-    // const urls = cachedUrls!;
-
-    const posts = await getCollection('blog');
-
-    const urls = posts.map(
-        post => `/posts/${getPostParams(post).path}`
-    )    
-
-    const randomUrl = urls[getRandomInt(0, urls.length)];
+    const randomUrl = postUrls[getRandomInt(0, postUrls.length)];
 
     return new Response(
         JSON.stringify({ 
