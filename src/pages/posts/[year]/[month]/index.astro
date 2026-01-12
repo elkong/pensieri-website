@@ -27,9 +27,10 @@ const sortedPosts = monthPosts.sort(
     (a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => comparePostsByDate(a, b)
 );
 
+const pageTitle = `${year}-${month} | Kitten Carnival`;
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
 	<h2>Monthly archive: {year}-{month}</h2>
     <PostList posts={sortedPosts} />
     <PrevNextDateNav />

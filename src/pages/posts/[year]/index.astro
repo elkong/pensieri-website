@@ -27,9 +27,10 @@ const sortedPosts = yearPosts.sort(
     (a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => comparePostsByDate(a, b)
 );
 
+const pageTitle = `${year} | Kitten Carnival`;
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
 	<h2>Yearly archive: {year}</h2>
     <PostList posts={sortedPosts} />
     <PrevNextDateNav />

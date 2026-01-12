@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const { pageTitle = "Kitten Carnival" } = Astro.props; 
 ---
 
 <html lang="en">
@@ -47,7 +49,7 @@ import Footer from '../components/Footer.astro';
 		<meta name="twitter:description" content="Thoughts and musings and silly short fiction." />
 		<meta name="twitter:image" content="https://kittencarnival.com/kc-social-preview.png" />
 
-		<title>Kitten Carnival</title>
+		<title>{pageTitle}</title>
 
 	</head>
 	<body>

@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import RandomPost from '../components/RandomPost.astro';
+
+const pageTitle = "404 Not Found | Kitten Carnival";
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
 	<h2>404 Not Found</h2>
 	<div class="postBody">
 		<p>Oh dear, we've made a mess of ourselves, haven't we? Let's just pretend this never happened. Right this way, darling.</p>

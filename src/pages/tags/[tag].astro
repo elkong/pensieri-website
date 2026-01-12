@@ -26,8 +26,10 @@ const sortedPosts = posts.sort(
 );
 
 // const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.includes(tag));
+
+const pageTitle = `Tag: "${tag}" | Kitten Carnival`;
 ---
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
     <p>Posts tagged with <span class="tag">{tag}</span></p>
     <PostList posts={sortedPosts}/>
 </BaseLayout>
